@@ -20,7 +20,7 @@ const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(true)
-  const [errorMessage, setErrorMessage] = useState('some error happened...')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const toggleImportanceOf = id => {
 	const note = notes.find(n => n.id === id)
@@ -43,7 +43,7 @@ const App = () => {
   }
 
   const Notification = ({ message }) => {
-	if (message === null) {
+	if (!message) {
 	  return null
 	}
   
